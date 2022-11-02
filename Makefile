@@ -23,7 +23,7 @@ endif
 .PHONY: all
 all = my_bios.elf
 
-$(build_dir)/my_bios.elf: $(build_dir)/init.o $(build_dir)/os_service.o
+$(build_dir)/my_bios.elf: $(build_dir)/os_service.o $(build_dir)/init.o
 	@mkdir -p $(build_dir)
 	$(LD) $^ -nostartfiles -T $(src_dir)/init.elf.ldS -o $@
 
